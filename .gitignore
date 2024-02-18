@@ -1,0 +1,4 @@
+docs/*
+!docs/*.tex
+!docs/*.bib
+!docs/images/
