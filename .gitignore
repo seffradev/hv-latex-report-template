@@ -1,4 +1,8 @@
-docs/*
-!docs/*.tex
-!docs/*.bib
-!docs/images/
+docs/**/*.log
+docs/**/*.bbl
+docs/**/*.aux
+docs/**/*.blg
+docs/**/*.run*
+docs/**/*.bcf
+docs/**/*.toc
+docs/**/*.pdf
