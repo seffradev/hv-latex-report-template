@@ -1,4 +1,4 @@
-name:: Generate PDF
+name: Generate PDF
 run-name: Generate PDF
 on: [push]
 jobs:
