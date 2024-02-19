@@ -1,0 +1,18 @@
+name:: Generate PDF
+run-name: Generate PDF
+on: [push]
+jobs:
+  generate-pdf:
+    runs-on: ubuntu-latest
+    steps:
+      # install pdflatex and necessary extras
+      - run: sudo apt update
+      - run: sudo apt install texlive-latex-base texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - run: cd ${{ github.workspace }}/docs
+      - run: pdflatex main && biber main && pdflatex main && zathura main.pdf
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v3.1.3
+        with:
+          path: ${{ github.workspace }}/docs/main.pdf
