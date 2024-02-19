@@ -1,14 +1,24 @@
 \documentclass[12pt]{report}
-\usepackage[a4paper, total={6.5in, 9.5in}]{geometry}
+\usepackage[
+    a4paper,
+    top=1cm,
+    bottom=2cm,
+    left=3cm,
+    right=3cm,
+    headheight=12pt,
+    includehead,
+    includefoot,
+    heightrounded
+]{geometry}
 \usepackage{graphicx}
 \usepackage{biblatex}
 \usepackage{fancyhdr}
-\usepackage[style=iso]{datetime2}
 \usepackage{parskip}
 \usepackage{titlesec}
 \usepackage{csquotes}
 \usepackage{amsmath}
 \usepackage[swedish]{babel}
+\usepackage[style=iso]{datetime2}
 
 \input{general-headings}
 
@@ -19,12 +29,10 @@
 
 \begin{document}
 
-\input{titlepage}
+\include{titlepage}
 
 \setcounter{secnumdepth}{0}
 \pagenumbering{roman}
-
-\newpage
 
 \thispagestyle{plain}
 
@@ -67,9 +75,15 @@ dokumentinformationen nedan får plats på en och samma sida.
 \end{table}
 
 \pagestyle{fancy}
-\fancyhf{}
+\fancyhf[L,R,O,E]{}
 \fancyhead[C]{\title}
 \fancyfoot[C]{\thepage}
+
+\fancypagestyle{plain}{%
+    \fancyhf[L,R,O,E]{}
+    \fancyhead[C]{\title}
+    \fancyfoot[C]{\thepage}
+}
 
 \setcounter{secnumdepth}{3}
 \tableofcontents
@@ -206,27 +220,27 @@ Brödtext
 \printbibliography[
     heading=bibintoc,
     title={Referenser}
-    ]
-    \thispagestyle{fancy}
+]
+\thispagestyle{fancy}
 
-    \appendix
+\appendix
 
-    \titleformat{\chapter}[display]
-    {\normalfont\LARGE\bfseries}
-    {}
-    {0pt}
-    {Bilaga \thechapter:\ }
-    \titlespacing*{\chapter}
-    {0pt}
-    {0pt}
-    {0pt}
+\titleformat{\chapter}[display]
+{\normalfont\LARGE\bfseries}
+{}
+{0pt}
+{Bilaga \thechapter:\ }
+\titlespacing*{\chapter}
+{0pt}
+{0pt}
+{0pt}
 
-    \chapter{Rubriktext}
-    Bilagornas rubriker ska ha formatmallen \textit{Rubrik 7} (eng:
-    \textit{Heading 7}) för att de ska synas på rätt sätt i innehållsförteckningen.
-    Bilagerubriker inleds alltid med \textbf{Bilaga} \#: där \#=\textbf{A,B,C,...}.
-    De ska alltid stå överst på sidan, det vill säga de ska föregås av sidbrytning.
+\chapter{Rubriktext}
+Bilagornas rubriker ska ha formatmallen \textit{Rubrik 7} (eng:
+\textit{Heading 7}) för att de ska synas på rätt sätt i innehållsförteckningen.
+Bilagerubriker inleds alltid med \textbf{Bilaga} \#: där \#=\textbf{A,B,C,...}.
+De ska alltid stå överst på sidan, det vill säga de ska föregås av sidbrytning.
 
-    \chapter{Rubriktext}
+\chapter{Rubriktext}
 
 \end{document}
