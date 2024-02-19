@@ -11,7 +11,7 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v4
       - run: cd ${{ github.workspace }}/docs
-      - run: pdflatex main && biber main && pdflatex main && zathura main.pdf
+      - run: pdflatex main.tex && biber main.tex && pdflatex main.tex
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3.1.3
         with:
