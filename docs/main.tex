@@ -11,7 +11,7 @@
     heightrounded
 ]{geometry}
 \usepackage{graphicx}
-\usepackage{biblatex}
+\usepackage[natbib=true, style=numeric, sorting=none]{biblatex}
 \usepackage{fancyhdr}
 \usepackage{parskip}
 \usepackage{titlesec}
@@ -19,6 +19,7 @@
 \usepackage{amsmath}
 \usepackage[swedish]{babel}
 \usepackage[style=iso]{datetime2}
+\usepackage{svg}
 
 \input{general-headings}
 
@@ -55,14 +56,10 @@
 
 \input{mainmatter-headings}
 
-\newpage
-\pagenumbering{arabic}
+\include{chapters/chapters}
 
-\include{chapters/initial-chapter}
-\include{chapters/non-descript}
 \input{bibliography}
-\input{setup-appendix}
-\include{appendices/initial-appendix}
-\include{appendices/non-descript}
+
+\input{appendices/appendices}
 
 \end{document}
