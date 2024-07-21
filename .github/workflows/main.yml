@@ -7,10 +7,10 @@ jobs:
     steps:
       # install pdflatex and necessary extras
       - run: sudo apt update
-      - run: sudo apt install texlive-latex-base texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra texlive-bibtex-extra biber texlive-lang-european
+      - run: sudo apt install inkscape texlive-latex-base texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra texlive-bibtex-extra biber texlive-lang-european
       - name: Check out repository code
         uses: actions/checkout@v4
-      - run: cd ${{ github.workspace }}/docs && pdflatex main && biber main && pdflatex main
+      - run: cd ${{ github.workspace }}/docs && pdflatex --shell-escape main && biber main && pdflatex --shell-escape main
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v4.3.1
         with:
