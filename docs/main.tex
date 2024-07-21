@@ -21,7 +21,7 @@
 \usepackage[style=iso]{datetime2}
 \usepackage{svg}
 
-\input{general-headings}
+\input{utils/general-headings}
 
 \addbibresource{references.bib}
 
@@ -30,12 +30,12 @@
 
 \begin{document}
 
-\include{titlepage}
+\include{pages/titlepage}
 
 \setcounter{secnumdepth}{0}
 \pagenumbering{roman}
 
-\include{foreword}
+\include{pages/foreword}
 
 \pagestyle{fancy}
 \fancyhf[L,R,O,E]{}
@@ -48,17 +48,17 @@
     \fancyfoot[C]{\thepage}
 }
 
-\include{summary}
+\include{pages/summary}
 
 \setcounter{secnumdepth}{3}
 \tableofcontents
 \thispagestyle{fancy}
 
-\input{mainmatter-headings}
+\input{utils/mainmatter-headings}
 
 \include{chapters/chapters}
 
-\input{bibliography}
+\input{utils/bibliography}
 
 \input{appendices/appendices}
 
