@@ -13,20 +13,32 @@
 \usepackage{graphicx}
 \usepackage[natbib=true, style=numeric, sorting=none]{biblatex}
 \usepackage{fancyhdr}
+\usepackage[dvipsnames]{xcolor}
 \usepackage{parskip}
 \usepackage{titlesec}
 \usepackage{csquotes}
 \usepackage{amsmath}
-\usepackage[swedish]{babel}
-\usepackage[style=iso]{datetime2}
+\usepackage[english]{babel}
+\usepackage[style=iso, en-GB]{datetime2}
 \usepackage{svg}
+\usepackage{titling}
+
+\newcommand{\startappendix}[1]{
+    \chapter{#1}
+    \setcounter{page}{1}
+    \pagestyle{fancy}
+    \fancyhf[L,R,O,E]{}
+    \fancyhead[C]{\textit{\title}}
+    \fancyfoot[L]{Appendix}
+    \fancyfoot[C]{\thechapter:\thepage}
+    \thispagestyle{fancy}
+}
 
 \input{utils/general-headings}
 
 \addbibresource{references.bib}
 
-\def\title{Rapportmall IV steg 2}
-\def\course{XXX000 Kursnamn (se kursplan)}
+\input{variables}
 
 \begin{document}
 
@@ -35,24 +47,22 @@
 \setcounter{secnumdepth}{0}
 \pagenumbering{roman}
 
-\include{pages/foreword}
+\include{pages/summary}
 
 \pagestyle{fancy}
 \fancyhf[L,R,O,E]{}
-\fancyhead[C]{\title}
+\fancyhead[C]{\textit{\title}}
 \fancyfoot[C]{\thepage}
 
 \fancypagestyle{plain}{%
     \fancyhf[L,R,O,E]{}
-    \fancyhead[C]{\title}
+    \fancyhead[C]{\textit{\title}}
     \fancyfoot[C]{\thepage}
 }
 
-\include{pages/summary}
+\include{pages/preface}
 
-\setcounter{secnumdepth}{3}
-\tableofcontents
-\thispagestyle{fancy}
+\include{pages/tableofcontents}
 
 \input{utils/mainmatter-headings}
 
