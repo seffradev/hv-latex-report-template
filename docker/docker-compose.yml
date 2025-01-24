@@ -1,0 +1,8 @@
+services:
+  latex:
+    build:
+      context: .
+      dockerfile: dockerfile
+      target: development
+    volumes:
+      - ./:/docs
