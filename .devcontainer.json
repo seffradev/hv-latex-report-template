@@ -1,0 +1,6 @@
+{
+    "name": "LaTeX Container",
+    "dockerComposeFile": ["docker-compose.yml"],
+    "service": "latex",
+    "workspaceFolder": "/docs"
+}
