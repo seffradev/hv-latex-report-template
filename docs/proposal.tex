@@ -1,0 +1,90 @@
+\documentclass[12pt]{article}
+\usepackage[
+    a4paper,
+    top=1cm,
+    bottom=2cm,
+    left=3cm,
+    right=3cm,
+    headheight=12pt,
+    includehead,
+    includefoot,
+    heightrounded
+]{geometry}
+\usepackage{graphicx}
+\usepackage[natbib=true, style=numeric, sorting=none]{biblatex}
+\usepackage{fancyhdr}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{parskip}
+\usepackage{titlesec}
+\usepackage{csquotes}
+\usepackage{lastpage}
+\usepackage{amsmath}
+\usepackage[english]{babel}
+\usepackage[style=iso, en-GB]{datetime2}
+\usepackage{svg}
+\usepackage{titling}
+\usepackage{adjustbox}
+
+\addbibresource{references.bib}
+
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\titleformat{\section}
+  {\normalfont\fontsize{12}{12}\bfseries}{\thesection}{1em}{}
+
+\pagestyle{fancy}
+\fancyhf[L,R,O,E]{}
+\fancyhead[C]{\textbf{Proposal -- Degree project}}
+\fancyhead[R]{\thepage(\pageref{LastPage})}
+\fancyfoot[L]{
+Högskolan Väst, Institutionen för Ingenjörsvetenskap,
+\newline
+Avdelningen för Datateknik, 461 86 Trollhättan
+}
+\fancyfoot[R]{
+\adjincludegraphics[width=0.25\textwidth,valign=M]{images/university-west-logo.jpg}
+}
+
+\begin{document}
+
+\thispagestyle{fancy}
+
+\section*{Title of project}
+Your preliminary title
+
+\section*{Participants / authors}
+Name, phone, email and study program
+
+\section*{Company (if applicable)}
+Name, address
+
+\section*{Supervisor at company (if applicable)}
+Name, phone, email
+
+\section*{Project background (including literature)}
+Describe the background of your work and connect it to at least
+2 research articles \cite{höst2015}.
+
+\section*{Problem formulation}
+Describe the task or question you are going to solve.
+
+State realistic and measurable goals.
+
+\section*{Limitations (if applicable)}
+If you want to emphasize something that should not be included
+in your work, state these things here.
+
+\section*{Methodology}
+Describe how you will carry out your work. Who will do what?
+
+\section*{Resource plan (if applicable)}
+If you need any special equipment or other resources to carry out
+your work state that here.
+
+\printbibliography[
+    heading=bibintoc,
+    title={References}
+]
+
+\end{document}
